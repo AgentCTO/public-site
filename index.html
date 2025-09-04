@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AgentCTO</title>
+  <meta name="description" content="AgentCTO — Fractional CTO & agentic software development." />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="AgentCTO" />
+  <meta property="og:description" content="Human‑led AI development for SMBs. Production‑grade software, delivered fast." />
+  <meta property="og:image" content="/logo.png" />
+  <meta name="twitter:card" content="summary" />
+  <style>
+    :root{
+      /* Palette sampled from your logo */
+      --c-cyan:#22d3ee; --c-blue:#3b82f6; --c-purple:#8b5cf6; --c-pink:#ec4899; --c-amber:#fbbf24; --c-orange:#f59e0b;
+      --bg:#070b12; --fg:#e5e7eb; --muted:#94a3b8; --card:#0c1220;
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#f8fafc; --fg:#0b1220; --muted:#475569; --card:#ffffff; }
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial;
+      color:var(--fg);
+      /* Multicolor background echoes the logo */
+      background:
+        radial-gradient(900px 500px at 15% -10%, rgba(34,211,238,.14), transparent 60%),
+        radial-gradient(900px 500px at 85% 0%, rgba(139,92,246,.12), transparent 60%),
+        radial-gradient(800px 480px at 50% 120%, rgba(236,72,153,.10), transparent 65%),
+        radial-gradient(600px 380px at 50% 40%, rgba(251,191,36,.06), transparent 70%),
+        linear-gradient(180deg, var(--bg), #05070b);
+    }
+    .wrap{min-height:100%;display:grid;place-items:center;padding:24px}
+    .card{width:100%;max-width:620px;background:#000000;border:1px solid rgba(148,163,184,.18);border-radius:18px;padding:28px}
+    .brand{display:flex;align-items:center;gap:12px;margin:0 0 10px}
+    .logo{width:60px;height:60px;border-radius:10px;display:block;}
+    h1{font-size:clamp(22px,4vw,28px);line-height:1.15;margin:0}
+    .lead{margin:8px 0 14px;color:var(--muted);font-size:clamp(14px,2.2vw,16px)}
+    .cta{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{appearance:none;border:1px solid rgba(148,163,184,.25);background:transparent;color:var(--fg);padding:10px 14px;border-radius:12px;text-decoration:none;font-weight:600}
+    .btn.primary{border:none;background:linear-gradient(135deg,var(--c-cyan),var(--c-pink));color:#081018}
+    .fine{margin-top:16px;color:var(--muted);font-size:13px}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card" aria-label="AgentCTO">
+      <header class="brand">
+        <img class="logo" src="agentcto-logo.png" alt="AgentCTO logo" />
+        <h1>AgentCTO</h1>
+      </header>
+      <div class="cta">
+        <a class="btn primary" href="mailto:hello@agentcto.ai?subject=AgentCTO%20inquiry">Email</a>
+        <a class="btn" href="#" onclick="navigator.clipboard.writeText('hello@agentcto.ai');this.textContent='Copied';return false;">Copy address</a>
+      </div>
+      <div class="fine">© <span id="y"></span> AgentCTO</div>
+    </section>
+  </main>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
