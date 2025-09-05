@@ -3,8 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AgentCTO</title>
-  <meta name="description" content="AgentCTO — Fractional CTO & agentic software development." />
+  <title>AgentCTO — AI builds. You approve. We Deliver.</title>
+  <meta name="description" content="AgentCTO: Fractional CTO + agentic software development for SMBs. AI-built, human-approved, shipped fast—production-grade from day one." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -12,61 +23,1289 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
+
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="AgentCTO" />
-  <meta property="og:description" content="Human‑led AI development for SMBs. Production‑grade software, delivered fast." />
-  <meta property="og:image" content="/logo.png" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://agentcto.ai/" />
+  <meta property="og:title" content="AgentCTO — AI builds. You approve. We deliver." />
+  <meta property="og:description" content="Fractional CTO + agentic software development. Working software, fast. All outputs human-reviewed before client approval." />
+  <meta property="og:image" content="https://agentcto.ai/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AgentCTO — AI builds. You approve. We deliver." />
+  <meta name="twitter:description" content="Fractional CTO + agentic software development for SMBs." />
+  <meta name="twitter:image" content="https://agentcto.ai/og-image.jpg" />
+
+  <!-- Fonts: use system stack for speed/no external calls -->
   <style>
     :root{
-      /* Palette sampled from your logo */
-      --c-cyan:#22d3ee; --c-blue:#3b82f6; --c-purple:#8b5cf6; --c-pink:#ec4899; --c-amber:#fbbf24; --c-orange:#f59e0b;
-      --bg:#070b12; --fg:#e5e7eb; --muted:#94a3b8; --card:#0c1220;
+      --bg:#08060F;           /* very dark purple */
+      --bg-accent:#17112C;    /* dark purple */
+      --fg:#e5e7eb;           /* gray-200 */
+      --fg-dim:#E6E2F4;       /* slate-400 */
+      --brand:#4B70F5;        /* bright cyan */
+      --brand-2:#94A8ED;      /* bright blue */
+      --brand-3:#4C3BCF;      /* purple-blue */
+      --brand-4:#402E7A;      /* deep purple */
+      --ok:#4B70F5;           /* use cyan for success */
+      --muted:#17112C;        /* dark purple for muted */
+      --card:#17112C;         /* deep purple card background */
+      --ring: 0 0 0 8px rgba(61,194,236,.12);
     }
-    @media (prefers-color-scheme: light){
-      :root{ --bg:#f8fafc; --fg:#0b1220; --muted:#475569; --card:#ffffff; }
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
+    html,body{height:100%;min-height:100vh;}
     body{
       margin:0;
-      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial;
+      font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, sans-serif;
       color:var(--fg);
-      /* Multicolor background echoes the logo */
       background:
-        radial-gradient(900px 500px at 15% -10%, rgba(34,211,238,.14), transparent 60%),
-        radial-gradient(900px 500px at 85% 0%, rgba(139,92,246,.12), transparent 60%),
-        radial-gradient(800px 480px at 50% 120%, rgba(236,72,153,.10), transparent 65%),
-        radial-gradient(600px 380px at 50% 40%, rgba(251,191,36,.06), transparent 70%),
-        linear-gradient(180deg, var(--bg), #05070b);
+        radial-gradient(ellipse 1800px 1200px at 25% 10%, rgba(61,194,236,.06) 0%, rgba(61,194,236,.03) 35%, transparent 75%),
+        radial-gradient(ellipse 1600px 1000px at 85% 25%, rgba(75,112,245,.05) 0%, rgba(75,112,245,.025) 30%, transparent 70%),
+        radial-gradient(ellipse 1400px 900px at 15% 75%, rgba(76,59,207,.04) 0%, rgba(76,59,207,.02) 40%, transparent 80%),
+        radial-gradient(ellipse 1200px 700px at 75% 90%, rgba(64,46,122,.03) 0%, rgba(64,46,122,.015) 45%, transparent 85%),
+        var(--bg);
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
     }
-    .wrap{min-height:100%;display:grid;place-items:center;padding:24px}
-    .card{width:100%;max-width:620px;background:#000000;border:1px solid rgba(148,163,184,.18);border-radius:18px;padding:28px}
-    .brand{display:flex;align-items:center;gap:12px;margin:0 0 10px}
-    .logo{width:60px;height:60px;border-radius:10px;display:block;}
-    h1{font-size:clamp(22px,4vw,28px);line-height:1.15;margin:0}
-    .lead{margin:8px 0 14px;color:var(--muted);font-size:clamp(14px,2.2vw,16px)}
-    .cta{display:flex;gap:10px;flex-wrap:wrap}
-    .btn{appearance:none;border:1px solid rgba(148,163,184,.25);background:transparent;color:var(--fg);padding:10px 14px;border-radius:12px;text-decoration:none;font-weight:600}
-    .btn.primary{border:none;background:linear-gradient(135deg,var(--c-cyan),var(--c-pink));color:#081018}
-    .fine{margin-top:16px;color:var(--muted);font-size:13px}
+    .wrap{max-width:600px;margin:0 auto;padding:28px;}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--fg)}
+    .logo .mark{width:56px;height:56px;border-radius:12px;display:block;}
+    .logo .word{font-weight:700;letter-spacing:.2px}
+    .pill{border:1px solid rgba(148,163,184,.25);border-radius:999px;padding:6px 12px;color:var(--fg-dim);font-size:14px}
+
+    .hero{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:36px;
+      align-items:center;
+      padding:20px 0;
+      background:radial-gradient(ellipse at center, rgba(61,194,236,0.08) 0%, rgba(76,59,207,0.05) 40%, transparent 70%);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:'';
+      position:absolute;
+      top:-50%;
+      left:-50%;
+      width:200%;
+      height:200%;
+      background:conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(61,194,236,0.03) 90deg, transparent 180deg, rgba(76,59,207,0.03) 270deg, transparent 360deg);
+      animation:rotate 20s linear infinite;
+      pointer-events:none;
+    }
+    @keyframes rotate{
+      from{transform:rotate(0deg);}
+      to{transform:rotate(360deg);}
+    }
+    h1{
+      font-size: clamp(44px, 4vw, 60px);
+      line-height:1.05;
+      margin:16px 0 16px;
+      text-align:center;
+      background:linear-gradient(135deg, var(--fg) 0%, var(--brand) 50%, var(--brand-3) 100%);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+      position:relative;
+      z-index:2;
+      filter:drop-shadow(0 2px 8px rgba(61,194,236,0.2));
+      color:var(--fg);
+    }
+    h2{font-size: clamp(32px, 3.5vw, 48px);line-height:1.1;margin:0 0 16px}
+    .eyebrow{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      background:linear-gradient(135deg, rgba(61,194,236,0.15), rgba(76,59,207,0.15));
+      color:var(--brand);
+      padding:8px 16px;
+      border-radius:999px;
+      border:1px solid rgba(61,194,236,0.3);
+      font-size:14px;
+      font-weight:600;
+      margin-bottom:20px;
+      box-shadow:0 4px 20px rgba(61,194,236,0.15), inset 0 1px 0 rgba(255,255,255,0.1);
+      backdrop-filter:blur(10px);
+      position:relative;
+      z-index:2;
+    }
+    .eyebrow::before{
+      content:'';
+      position:absolute;
+      inset:-1px;
+      background:linear-gradient(135deg, var(--brand), var(--brand-3));
+      border-radius:inherit;
+      opacity:0;
+      transition:opacity 0.3s ease;
+      z-index:-1;
+    }
+    .eyebrow:hover::before{
+      opacity:0.1;
+    }
+    .subtitle{font-size: clamp(18px, 1.8vw, 22px);color:var(--fg-dim);margin:0 0 24px;font-weight:400;opacity:0.8}
+    .lead{font-size: clamp(16px, 1.6vw, 20px); color:var(--fg-dim); max-width:55ch; margin-bottom:20px; line-height:1.3;}
+
+    .cta{display:flex;gap:12px;align-items:center;justify-content:center;margin:22px 0 0 0;padding-bottom:25px}
+    .btn{
+      appearance:none;
+      border:none;
+      border-radius:14px;
+      padding:16px 24px;
+      font-weight:600;
+      cursor:pointer;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position:relative;
+      overflow:hidden;
+    }
+    .btn::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
+      opacity:0;
+      transition:opacity 0.3s ease;
+    }
+    .btn:hover::before{
+      opacity:1;
+    }
+    .btn.primary{
+      background:linear-gradient(135deg,var(--brand-3),var(--brand));
+      color:#ffffff;
+      box-shadow:0 10px 30px rgba(61,194,236,.25), 0 4px 12px rgba(61,194,236,.15);
+      border:1px solid rgba(255,255,255,0.1);
+    }
+    .btn.primary:hover{
+      transform:translateY(-2px) scale(1.02);
+      box-shadow:0 20px 40px rgba(61,194,236,.35), 0 8px 24px rgba(61,194,236,.25);
+    }
+    .btn.primary:focus{
+      outline:none;
+      box-shadow: var(--ring), 0 20px 40px rgba(61,194,236,.35);
+    }
+    .btn.ghost{
+      background:rgba(148,163,184,.08);
+      color:var(--fg);
+      border:1px solid rgba(148,163,184,.25);
+      backdrop-filter:blur(10px);
+    }
+    .btn.ghost:hover{
+      background:rgba(148,163,184,.15);
+      border-color:rgba(61,194,236,.4);
+      transform:translateY(-1px);
+      box-shadow:0 8px 20px rgba(148,163,184,.15);
+    }
+
+    .card{background:var(--muted);border:1px solid rgba(76,59,207,.25);border-radius:20px;padding:18px 18px 20px}
+    .checks{display:grid;grid-template-columns:1fr;gap:8px;font-size:15px;color:var(--fg-dim)}
+    .checks .item{display:flex;align-items:flex-start;gap:8px}
+    .checks svg{flex:0 0 auto;width:18px;height:18px;stroke:var(--ok);stroke-width:2;margin-top:1px}
+
+    /* Enhanced value propositions styles */
+    .value-props{display:grid;grid-template-columns:1fr;gap:16px;margin:38px 0 60px 0}
+    @media (min-width: 768px){.value-props{grid-template-columns:repeat(3, 1fr);gap:20px;}}
+    .value-prop-item{
+      text-align:center;
+      position:relative;
+    }
+    .value-prop-icon{
+      width:38px;
+      height:38px;
+      margin:0 auto 12px;
+      color:var(--brand);
+      font-size:38px;
+      filter:drop-shadow(0 4px 8px rgba(75,112,245,0.2));
+      position:relative;
+      z-index:2;
+    }
+    .value-prop-text{
+      font-size:14px;
+      font-weight:600;
+      color:var(--fg);
+      margin:0;
+      position:relative;
+      z-index:2;
+      line-height:1.4;
+    }
+
+    .grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:26px}
+
+    /* HR styling */
+    hr{
+      border:none;
+      height:1px;
+      background:linear-gradient(90deg, transparent 0%, rgba(75,112,245,.3) 20%, rgba(76,59,207,.4) 50%, rgba(75,112,245,.3) 80%, transparent 100%);
+      margin:50px 0 25px 0;
+      position:relative;
+    }
+    hr::before{
+      content:'';
+      position:absolute;
+      top:-2px;
+      left:50%;
+      transform:translateX(-50%);
+      width:60px;
+      height:5px;
+      background:linear-gradient(90deg, var(--brand-3), var(--brand));
+      border-radius:3px;
+      opacity:0.6;
+      filter:blur(1px);
+    }
+
+    /* Enhanced Footer Styles */
+    .footer{
+      margin-top:60px;
+      position:relative;
+      overflow:hidden;
+    }
+    
+    .footer::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      height:1px;
+      background:linear-gradient(90deg, transparent 0%, rgba(75,112,245,.3) 20%, rgba(76,59,207,.4) 50%, rgba(75,112,245,.3) 80%, transparent 100%);
+    }
+    
+    .footer-content{
+      background:linear-gradient(135deg, rgba(64,46,122,.06), rgba(61,194,236,.04));
+      border:1px solid rgba(76,59,207,.15);
+      border-radius:24px 24px 0 0;
+      padding:48px 40px 32px;
+      position:relative;
+      margin-top:1px;
+    }
+    
+    .footer-content::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:radial-gradient(ellipse at center top, rgba(61,194,236,0.03) 0%, transparent 60%);
+      pointer-events:none;
+      border-radius:inherit;
+    }
+    
+    .footer-main{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:32px;
+      margin-bottom:32px;
+      position:relative;
+      z-index:2;
+    }
+    
+    @media (min-width: 768px){
+      .footer-main{
+        grid-template-columns:1fr 1fr;
+        gap:48px;
+      }
+    }
+    
+    .footer-brand{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+    
+    .footer-logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    
+    .footer-logo-img{
+      width:48px;
+      height:48px;
+      border-radius:12px;
+      filter:drop-shadow(0 4px 8px rgba(61,194,236,0.2));
+    }
+    
+    .footer-brand-name{
+      font-size:24px;
+      font-weight:700;
+      background:linear-gradient(135deg, var(--fg) 0%, var(--brand) 100%);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+    }
+    
+    .footer-tagline{
+      color:var(--fg-dim);
+      font-size:16px;
+      font-weight:500;
+      margin:0;
+      opacity:0.9;
+    }
+    
+    .footer-contact{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+    
+    .footer-section-title{
+      color:var(--fg);
+      font-size:16px;
+      font-weight:600;
+      margin:0 0 8px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    
+    .footer-contact-item{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      color:var(--fg-dim);
+      font-size:14px;
+      transition:all 0.3s ease;
+    }
+    
+    .footer-contact-item i{
+      color:var(--brand);
+      font-size:18px;
+      flex-shrink:0;
+      transition:all 0.3s ease;
+    }
+    
+    .footer-contact-item a{
+      color:var(--fg-dim);
+      text-decoration:none;
+      transition:all 0.3s ease;
+      position:relative;
+    }
+    
+    .footer-contact-item a::after{
+      content:'';
+      position:absolute;
+      bottom:-2px;
+      left:0;
+      width:0;
+      height:1px;
+      background:var(--brand);
+      transition:width 0.3s ease;
+    }
+    
+    .footer-contact-item:hover{
+      color:var(--fg);
+      transform:translateX(4px);
+    }
+    
+    .footer-contact-item:hover i{
+      color:var(--brand-3);
+      transform:scale(1.1);
+    }
+    
+    .footer-contact-item:hover a{
+      color:var(--brand);
+    }
+    
+    .footer-contact-item:hover a::after{
+      width:100%;
+    }
+    
+    .footer-bottom{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      padding-top:24px;
+      border-top:1px solid rgba(76,59,207,.15);
+      position:relative;
+      z-index:2;
+    }
+    
+    @media (max-width: 480px){
+      .footer-bottom{
+        flex-direction:column;
+        gap:12px;
+        text-align:center;
+      }
+    }
+    
+    .footer-copyright{
+      color:var(--fg-dim);
+      font-size:14px;
+      opacity:0.8;
+    }
+    
+    .footer-ai-badge{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      color:var(--brand);
+      font-size:14px;
+      font-weight:500;
+      background:linear-gradient(135deg, rgba(61,194,236,0.1), rgba(76,59,207,0.1));
+      padding:8px 16px;
+      border-radius:20px;
+      border:1px solid rgba(61,194,236,0.2);
+    }
+    
+    .footer-ai-badge i{
+      font-size:16px;
+    }
+
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Courier New", monospace; font-size: 13px; color: #a8b1c9}
+
+    /* Agents Timeline Section */
+    .agents{margin-bottom:40px;position:relative}
+    .agents h2{font-size: clamp(24px, 3vw, 36px);margin:0 0 12px;text-align:center}
+    .agents .subtitle{text-align:center;color:var(--fg-dim);margin-bottom:48px;font-size:16px}
+    
+    /* Timeline Container */
+    .process-timeline{
+      position:relative;
+      padding:20px 0;
+    }
+    
+    /* Timeline Line */
+    .timeline-line{
+      position:absolute;
+      left:50%;
+      top:0;
+      bottom:0;
+      width:3px;
+      background:linear-gradient(180deg, var(--brand-3) 0%, var(--brand) 50%, rgba(76,59,207,0.5) 100%);
+      transform:translateX(-50%);
+      border-radius:2px;
+      box-shadow:0 0 20px rgba(61,194,236,0.3);
+    }
+    
+    /* Animated Flow Indicator */
+    .flow-indicator{
+      position:absolute;
+      left:50%;
+      top:0;
+      width:8px;
+      height:8px;
+      background:var(--brand);
+      border-radius:50%;
+      transform:translateX(-50%);
+      box-shadow:0 0 15px rgba(61,194,236,0.6), 0 0 30px rgba(61,194,236,0.3);
+      animation:flowDown 8s ease-in-out infinite;
+    }
+    
+    @keyframes flowDown{
+      0%{top:0;opacity:1;}
+      100%{top:calc(100% - 8px);opacity:0.3;}
+    }
+    
+    /* Timeline Steps */
+    .timeline-step{
+      position:relative;
+      margin-bottom:60px;
+      display:flex;
+      align-items:center;
+      gap:40px;
+    }
+    
+    .timeline-step:nth-child(even){
+      flex-direction:row-reverse;
+    }
+    
+    .timeline-step:nth-child(even) .step-content{
+      text-align:right;
+    }
+    
+    /* Step Number Circle */
+    .step-number{
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
+      width:60px;
+      height:60px;
+      background:linear-gradient(135deg, var(--brand-3), var(--brand));
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      font-size:20px;
+      color:white;
+      box-shadow:0 8px 25px rgba(61,194,236,0.4), 0 0 0 4px var(--bg), 0 0 0 6px rgba(61,194,236,0.2);
+      z-index:3;
+      transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .timeline-step:hover .step-number{
+      transform:translateX(-50%) scale(1.1);
+      box-shadow:0 12px 35px rgba(61,194,236,0.5), 0 0 0 4px var(--bg), 0 0 0 8px rgba(61,194,236,0.3);
+    }
+    
+    /* Step Content Card */
+    .step-content{
+      flex:1;
+      background:var(--card);
+      border:1px solid rgba(76,59,207,.25);
+      border-radius:20px;
+      padding:32px;
+      position:relative;
+      overflow:hidden;
+      transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      max-width:calc(50% - 60px);
+    }
+    
+    .step-content::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:linear-gradient(135deg, rgba(61,194,236,0.03), rgba(76,59,207,0.03));
+      opacity:0;
+      transition:opacity 0.4s ease;
+    }
+    
+    .timeline-step:hover .step-content{
+      transform:translateY(-8px);
+      box-shadow:0 25px 50px rgba(76,59,207,.2), 0 10px 30px rgba(61,194,236,.15);
+      border-color:rgba(61,194,236,.4);
+    }
+    
+    .timeline-step:hover .step-content::before{
+      opacity:1;
+    }
+    
+    /* Step Icon */
+    .step-icon{
+      width:48px;
+      height:48px;
+      padding:12px;
+      background:linear-gradient(135deg, rgba(61,194,236,0.1), rgba(76,59,207,0.1));
+      border:1px solid rgba(61,194,236,0.3);
+      border-radius:16px;
+      margin-bottom:20px;
+      transition:all 0.3s ease;
+      position:relative;
+      z-index:2;
+    }
+    
+    .step-icon i{
+      width:100%;
+      height:100%;
+      color:var(--brand);
+      font-size:50px;
+    }
+    
+    .timeline-step:hover .step-icon{
+      transform:scale(1.05) rotate(5deg);
+      background:linear-gradient(135deg, rgba(61,194,236,0.15), rgba(76,59,207,0.15));
+      box-shadow:0 8px 20px rgba(61,194,236,0.2);
+    }
+    
+    /* Step Title */
+    .step-title{
+      font-size:20px;
+      font-weight:700;
+      margin:0 0 8px;
+      background:linear-gradient(135deg, var(--fg) 0%, var(--brand) 100%);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+      position:relative;
+      z-index:2;
+    }
+    
+    /* Step Type Badge */
+    .step-type{
+      display:inline-block;
+      color:var(--brand);
+      font-size:12px;
+      font-weight:600;
+      background:linear-gradient(135deg, rgba(61,194,236,0.15), rgba(76,59,207,0.15));
+      padding:6px 12px;
+      border-radius:20px;
+      margin-bottom:16px;
+      border:1px solid rgba(61,194,236,0.2);
+      position:relative;
+      z-index:2;
+    }
+    
+    /* Step Description */
+    .step-desc{
+      color:var(--fg-dim);
+      font-size:15px;
+      line-height:1.5;
+      margin:0 0 16px;
+      position:relative;
+      z-index:2;
+    }
+    
+    /* Step Outputs */
+    .step-outputs{
+      font-size:14px;
+      color:var(--brand);
+      font-weight:500;
+      background:rgba(61,194,236,0.08);
+      padding:12px 16px;
+      border-radius:12px;
+      border:1px solid rgba(61,194,236,0.15);
+      position:relative;
+      z-index:2;
+    }
+    
+         /* Enhanced Value Summary */
+     .value-summary{
+       background:linear-gradient(135deg, rgba(64,46,122,.08), rgba(61,194,236,.06));
+       border:1px solid rgba(76,59,207,.25);
+       border-radius:24px;
+       padding:40px;
+       margin-top:40px;
+       position:relative;
+       overflow:hidden;
+       transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+     }
+     
+     .value-summary::before{
+       content:'';
+       position:absolute;
+       inset:0;
+       background:radial-gradient(ellipse at center, rgba(61,194,236,0.05) 0%, transparent 70%);
+       pointer-events:none;
+     }
+     
+     .value-summary:hover{
+       transform:translateY(-4px);
+       box-shadow:0 20px 40px rgba(76,59,207,.15), 0 8px 24px rgba(61,194,236,.1);
+       border-color:rgba(61,194,236,.4);
+     }
+     
+     .summary-content{
+       display:grid;
+       grid-template-columns:1fr;
+       gap:32px;
+       align-items:center;
+       position:relative;
+       z-index:2;
+     }
+     
+     @media (min-width: 768px){
+       .summary-content{
+         grid-template-columns:1fr 1fr;
+         gap:48px;
+       }
+     }
+     
+     .value-headline{
+       text-align:left;
+     }
+     
+     .value-headline h3{
+       font-size:clamp(24px, 3vw, 36px);
+       margin:0 0 16px;
+       font-weight:700;
+       line-height:1.2;
+       background:linear-gradient(135deg, var(--fg) 0%, var(--brand) 70%, var(--brand-3) 100%);
+       -webkit-background-clip:text;
+       -webkit-text-fill-color:transparent;
+       background-clip:text;
+     }
+     
+     .value-headline p{
+       color:var(--fg-dim);
+       font-size:18px;
+       line-height:1.5;
+       margin:0;
+     }
+     
+     .value-headline .primary-statement{
+       color:var(--brand);
+       font-style:italic;
+       font-weight:500;
+       margin-bottom:12px;
+       background:linear-gradient(135deg, var(--brand) 0%, var(--brand-3) 100%);
+       -webkit-background-clip:text;
+       -webkit-text-fill-color:transparent;
+       background-clip:text;
+       filter:drop-shadow(0 1px 2px rgba(61,194,236,0.1));
+     }
+     
+     .value-headline .secondary-statement{
+       color:var(--fg-dim);
+       margin-top:8px;
+       font-size:16px;
+     }
+     
+     .value-benefits{
+       display:grid;
+       gap:20px;
+     }
+     
+     .benefit-item{
+       display:flex;
+       align-items:flex-start;
+       gap:16px;
+       padding:16px;
+       background:rgba(255,255,255,0.02);
+       border-radius:16px;
+       border:1px solid rgba(61,194,236,0.1);
+       transition:all 0.3s ease;
+       position:relative;
+       overflow:hidden;
+     }
+     
+     .benefit-item::before{
+       content:'';
+       position:absolute;
+       inset:0;
+       background:linear-gradient(135deg, rgba(61,194,236,0.03), rgba(76,59,207,0.03));
+       opacity:0;
+       transition:opacity 0.3s ease;
+     }
+     
+     .benefit-item:hover{
+       transform:translateX(4px);
+       border-color:rgba(61,194,236,0.3);
+       background:rgba(255,255,255,0.04);
+     }
+     
+     .benefit-item:hover::before{
+       opacity:1;
+     }
+     
+     .benefit-icon{
+       width:24px;
+       height:24px;
+       flex-shrink:0;
+       margin-top:2px;
+       color:var(--brand);
+       transition:all 0.3s ease;
+       position:relative;
+       z-index:2;
+     }
+     
+     .benefit-item:hover .benefit-icon{
+       transform:scale(1.1);
+       color:var(--brand-3);
+     }
+     
+     .benefit-content{
+       flex:1;
+       position:relative;
+       z-index:2;
+     }
+     
+     .benefit-title{
+       font-weight:600;
+       color:var(--fg);
+       margin:0 0 4px;
+       font-size:15px;
+     }
+     
+     .benefit-desc{
+       color:var(--fg-dim);
+       font-size:14px;
+       line-height:1.4;
+       margin:0;
+     }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px){
+      .timeline-line{display:none;}
+      .flow-indicator{display:none;}
+      .timeline-step{
+        flex-direction:column !important;
+        margin-bottom:40px;
+      }
+      .timeline-step:nth-child(even) .step-content{
+        text-align:left;
+      }
+      .step-content{
+        max-width:100%;
+      }
+      .step-number{
+        position:relative;
+        left:auto;
+        transform:none;
+        margin-bottom:20px;
+      }
+    }
+
+    /* Fractional CTO section styles */
+    .fractional-cto h2{font-size: clamp(24px, 3vw, 36px);margin:0 0 12px;text-align:center}
+    .fractional-cto .subtitle{text-align:center;color:var(--fg-dim);margin-bottom:32px;font-size:16px}
+    .cto-value{display:grid;grid-template-columns:1fr;gap:24px}
+    @media (min-width: 768px){.cto-value{grid-template-columns:1fr 1fr;}}
+    .value-prop, .engagement{
+      background:var(--card);
+      border:1px solid rgba(76,59,207,.25);
+      border-radius:16px;
+      padding:24px;
+      transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position:relative;
+      overflow:hidden;
+    }
+    .value-prop::before, .engagement::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:linear-gradient(135deg, rgba(61,194,236,0.05), rgba(76,59,207,0.05));
+      opacity:0;
+      transition:opacity 0.4s ease;
+    }
+    .value-prop:hover, .engagement:hover{
+      transform:translateY(-8px);
+      box-shadow:0 20px 40px rgba(76,59,207,.15), 0 8px 24px rgba(61,194,236,.1);
+      border-color:rgba(61,194,236,.4);
+    }
+    .value-prop:hover::before, .engagement:hover::before{
+      opacity:1;
+    }
+    .value-prop h3, .engagement h3{font-weight:600;color:var(--fg);margin:0 0 16px;font-size:18px}
+    .cto-benefits{list-style:none;padding:0;margin:0}
+    .cto-benefits li{display:flex;align-items:flex-start;gap:12px;margin-bottom:26px;color:var(--fg-dim);font-size:15px}
+    .cto-benefits li i{
+      color:var(--brand);
+      font-size:18px;
+      margin-top:1px;
+      flex-shrink:0;
+      transition:all 0.3s ease;
+      filter:drop-shadow(0 2px 4px rgba(61,194,236,0.2));
+    }
+    .cto-benefits li:hover i{
+      transform:scale(1.1) rotate(5deg);
+      color:var(--brand-3);
+      filter:drop-shadow(0 4px 8px rgba(61,194,236,0.3));
+    }
+    .engagement-list{list-style:none;padding:0;margin:0}
+    .engagement-list li{display:flex;align-items:flex-start;gap:12px;margin-bottom:26px;color:var(--fg-dim);font-size:15px;line-height:1.4}
+    .engagement-list li .content{flex:1;min-width:0}
+    .engagement-list li i{
+      color:var(--brand);
+      font-size:18px;
+      margin-top:1px;
+      flex-shrink:0;
+      transition:all 0.3s ease;
+      filter:drop-shadow(0 2px 4px rgba(61,194,236,0.2));
+    }
+    .engagement-list li:hover i{
+      transform:scale(1.1) rotate(-5deg);
+      color:var(--brand-3);
+      filter:drop-shadow(0 4px 8px rgba(61,194,236,0.3));
+    }
+    .engagement strong{display:block;color:var(--fg);font-weight:600;margin-bottom:4px}
+
+    /* Focused Bottom CTA Section */
+    .bottom-cta{
+      margin:40px 0 40px;
+      padding:60px 40px;
+      background:linear-gradient(135deg, var(--brand-3), var(--brand));
+      border-radius:28px;
+      position:relative;
+      overflow:hidden;
+      text-align:center;
+      transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .bottom-cta::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:radial-gradient(circle at 30% 20%, rgba(255,255,255,0.15) 0%, transparent 50%),
+                 radial-gradient(circle at 70% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+      pointer-events:none;
+    }
+    
+    .bottom-cta::after{
+      content:'';
+      position:absolute;
+      top:-50%;
+      left:-50%;
+      width:200%;
+      height:200%;
+      background:conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(255,255,255,0.05) 90deg, transparent 180deg, rgba(255,255,255,0.05) 270deg, transparent 360deg);
+      animation:rotate 25s linear infinite;
+      pointer-events:none;
+    }
+    
+    .bottom-cta:hover{
+      transform:translateY(-4px) scale(1.01);
+      box-shadow:0 30px 60px rgba(61,194,236,.4), 0 15px 35px rgba(76,59,207,.3);
+    }
+    
+    .bottom-cta-content{
+      position:relative;
+      z-index:2;
+      max-width:600px;
+      margin:0 auto;
+    }
+    
+    .cta-eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:rgba(255,255,255,0.15);
+      color:rgba(255,255,255,0.9);
+      padding:8px 16px;
+      border-radius:20px;
+      font-size:14px;
+      font-weight:600;
+      margin-bottom:20px;
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,0.2);
+    }
+    
+    .bottom-cta h2{
+      font-size:clamp(32px, 4vw, 48px);
+      margin:0 0 16px;
+      font-weight:700;
+      line-height:1.1;
+      color:white;
+      text-shadow:0 2px 10px rgba(0,0,0,0.2);
+    }
+    
+    .bottom-cta-text{
+      font-size:clamp(18px, 2vw, 22px);
+      color:rgba(255,255,255,0.9);
+      margin:0 0 32px;
+      line-height:1.5;
+      text-shadow:0 1px 5px rgba(0,0,0,0.1);
+    }
+    
+    .cta-buttons{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      align-items:center;
+    }
+    
+    @media (min-width: 480px){
+      .cta-buttons{
+        flex-direction:row;
+        justify-content:center;
+        gap:20px;
+      }
+    }
+    
+    .cta-primary{
+      background:white;
+      color:var(--brand);
+      border:none;
+      padding:16px 32px;
+      border-radius:16px;
+      font-weight:700;
+      font-size:16px;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow:0 8px 25px rgba(0,0,0,0.15);
+      min-width:200px;
+      justify-content:center;
+    }
+    
+    .cta-primary:hover{
+      transform:translateY(-2px) scale(1.05);
+      box-shadow:0 12px 35px rgba(0,0,0,0.25);
+      background:rgba(255,255,255,0.95);
+    }
+    
+    .cta-secondary{
+      background:rgba(255,255,255,0.1);
+      color:white;
+      border:1px solid rgba(255,255,255,0.3);
+      padding:16px 32px;
+      border-radius:16px;
+      font-weight:600;
+      font-size:16px;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      transition:all 0.3s ease;
+      backdrop-filter:blur(10px);
+      min-width:200px;
+      justify-content:center;
+    }
+    
+    .cta-secondary:hover{
+      background:rgba(255,255,255,0.2);
+      border-color:rgba(255,255,255,0.5);
+      transform:translateY(-1px);
+    }
+    
+    .guarantee{
+      margin-top:24px;
+      font-size:14px;
+      color:rgba(255,255,255,0.8);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+    }
+    
+    .guarantee i{
+      font-size:16px;
+    }
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <section class="card" aria-label="AgentCTO">
-      <header class="brand">
-        <img class="logo" src="agentcto-logo.png" alt="AgentCTO logo" />
-        <h1>AgentCTO</h1>
-      </header>
-      <div class="cta">
-        <a class="btn primary" href="mailto:hello@agentcto.ai?subject=AgentCTO%20inquiry">Email</a>
-        <a class="btn" href="#" onclick="navigator.clipboard.writeText('hello@agentcto.ai');this.textContent='Copied';return false;">Copy address</a>
+  <div class="wrap">
+    <header class="nav">
+      <a class="logo" href="#">
+        <img class="mark" src="agentcto-logo.png" alt="AgentCTO logo" />
+        <span class="word">AgentCTO</span>
+      </a>
+      <span class="pill">Fractional CTO + Agentic Development</span>
+    </header>
+
+    <main id="main" class="hero">
+      <section>
+        <span class="eyebrow">AI Speed • Human oversight</span>
+        <h1>Agents Build. You Approve. We Deliver.</h1>
+        <p class="lead">AI agents build production software in your repositories with human review gates and rollback protection. You control the releases and approve each milestone before going live.</p>
+        <div class="value-props">
+          <div class="value-prop-item">
+            <i class="ph ph-invoice value-prop-icon"></i>
+            <p class="value-prop-text">Outcome‑focused pricing</p>
+          </div>
+          
+          <div class="value-prop-item">
+            <i class="ph ph-clock-clockwise value-prop-icon"></i>
+            <p class="value-prop-text">Fast iterations, fewer meetings</p>
+          </div>
+          
+          <div class="value-prop-item">
+            <i class="ph ph-list-checks value-prop-icon"></i>
+            <p class="value-prop-text">Clear acceptance criteria</p>
+          </div>
+        </div>
+        <div class="cta">
+          <a class="btn primary" href="mailto:hello@agentcto.ai?subject=Project%20inquiry%20from%20AgentCTO.ai">Start a conversation</a>
+          <a class="btn ghost" href="mailto:hello@agentcto.ai?subject=Questions%20about%20AgentCTO">Questions? Email us</a>
+        </div>
+        <hr/>
+      </section>
+      <!-- Fractional CTO section -->
+      <section class="fractional-cto">
+        <h2>Fractional CTO: Strategic Technical Guidance</h2>
+        <p class="subtitle">Senior-level technology leadership without full-time executive costs</p>
+        
+        <div class="cto-value">
+          <div class="value-prop">
+            <h3>What You Get</h3>
+            <ul class="cto-benefits">
+              <li><i class="ph ph-target"></i>Technology strategy aligned with business goals</li>
+              <li><i class="ph ph-buildings"></i>Architecture decisions for scalable growth</li>
+              <li><i class="ph ph-users-three"></i>Team structure and development process guidance</li>
+              <li><i class="ph ph-magnifying-glass"></i>Vendor evaluation and technology selection</li>
+              <li><i class="ph ph-shield-check"></i>Risk assessment and compliance planning</li>
+            </ul>
+          </div>
+          
+          <div class="engagement">
+            <h3>How It Works</h3>
+            <ul class="engagement-list">
+              <li><i class="ph ph-calendar-check"></i><span class="content"><strong>Monthly retainer:</strong> 4-16 hours of strategic guidance</span></li>
+              <li><i class="ph ph-lightning"></i><span class="content"><strong>On-demand:</strong> Architecture reviews, team assessments, crisis support</span></li>
+              <li><i class="ph ph-file-text"></i><span class="content"><strong>Deliverables:</strong> Written recommendations, roadmaps, process documentation</span></li>
+              <li><i class="ph ph-handshake"></i><span class="content"><strong>Partnership approach:</strong> Direct collaboration with your team</span></li>
+            </ul>
+          </div>
+        </div>
+        <hr/>
+      </section>
+
+      <!-- Agents section -->
+      <section class="agents">
+        <h2>How We Deliver: AI Agents + Human Oversight</h2>
+        <p class="subtitle">Six-stage process that reduces implementation risk and delivers accepted features in weeks, not months</p>
+        
+        <div class="process-timeline">
+          <div class="timeline-line"></div>
+          <div class="flow-indicator"></div>
+          <div class="timeline-step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <div class="step-icon">
+                <i class="ph ph-list-magnifying-glass"></i>
+              </div>
+              <div class="step-type">Risk Analysis</div>
+              <h3 class="step-title">Codebase Assessment</h3>
+              <p class="step-desc">Map existing code, identify vulnerabilities, assess technical debt</p>
+              <div class="step-outputs"><strong>Outputs:</strong> Health grade, security report, implementation risk assessment</div>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <div class="step-icon">
+                <i class="ph ph-target"></i>
+              </div>
+              <div class="step-type">Ambiguity Reduction</div>
+              <h3 class="step-title">Scope Definition</h3>
+              <p class="step-desc">Break requests into specific, testable tasks with clear acceptance criteria</p>
+              <div class="step-outputs"><strong>Outputs:</strong> Task breakdown, effort estimates, success metrics per deliverable</div>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <div class="step-icon">
+                <i class="ph ph-tree-structure"></i>
+              </div>
+              <div class="step-type">Controlled Implementation</div>
+              <h3 class="step-title">Systematic Development</h3>
+              <p class="step-desc">Test-driven development with isolated branches and commit-level tracking</p>
+              <div class="step-outputs"><strong>Outputs:</strong> Working code + tests, documented changes, rollback-ready commits</div>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <div class="step-icon">
+                <i class="ph ph-shield-check"></i>
+              </div>
+              <div class="step-type">Pre-Delivery Testing</div>
+              <h3 class="step-title">Quality Validation</h3>
+              <p class="step-desc">Browser-driven testing beyond unit tests, full verification before review</p>
+              <div class="step-outputs"><strong>Outputs:</strong> Test coverage report, functionality validation, deployment readiness</div>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <div class="step-icon">
+                <i class="ph ph-user-switch"></i>
+              </div>
+              <div class="step-type">Final Review</div>
+              <h3 class="step-title">Human Review Gate</h3>
+              <p class="step-desc">Senior engineer validates all AI outputs before client presentation</p>
+              <div class="step-outputs"><strong>Outputs:</strong> Technical sign-off, deployment recommendation, acceptance package</div>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-number">6</div>
+            <div class="step-content">
+              <div class="step-icon">
+                <i class="ph ph-package"></i>
+              </div>
+              <div class="step-type">Transparent Handoff</div>
+              <h3 class="step-title">Delivery Package</h3>
+              <p class="step-desc">Complete documentation, test results, and deployment instructions</p>
+              <div class="step-outputs"><strong>Outputs:</strong> Feature documentation, test coverage, deployment guide, support handoff</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="value-summary">
+          <div class="summary-content">
+              <div class="value-headline">
+                <h3>Why AgentCTO</h3>
+                <p class="primary-statement">Senior-level technical leadership combined with AI-powered development.</p>
+                <p class="secondary-statement">Get strategic guidance and feature delivery in one solution.</p>
+              </div>
+            
+            <div class="value-benefits">
+              <div class="benefit-item">
+                <i class="benefit-icon ph ph-lightning"></i>
+                <div class="benefit-content">
+                  <div class="benefit-title">Fast & Predictable</div>
+                  <div class="benefit-desc">Transparent processes with predictable costs and delivery timelines</div>
+                </div>
+              </div>
+              
+              <div class="benefit-item">
+                <i class="benefit-icon ph ph-shield-check"></i>
+                <div class="benefit-content">
+                  <div class="benefit-title">Deploy with Confidence</div>
+                  <div class="benefit-desc">Human-reviewed code with built-in safeguards and rollback protection</div>
+                </div>
+              </div>
+              
+              <div class="benefit-item">
+                <i class="benefit-icon ph ph-handshake"></i>
+                <div class="benefit-content">
+                  <div class="benefit-title">No Lock-in Risk</div>
+                  <div class="benefit-desc">Your code, your repositories, cancel anytime after pilot project</div>
+                </div>
+              </div>
+              
+              <div class="benefit-item">
+                <i class="benefit-icon ph ph-target"></i>
+                <div class="benefit-content">
+                  <div class="benefit-title">Strategic + Tactical</div>
+                  <div class="benefit-desc">CTO-level guidance combined with hands-on feature development</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom CTA Section -->
+    <section class="bottom-cta">
+      <div class="bottom-cta-content">
+        <div class="cta-eyebrow">
+          <i class="ph ph-head-circuit"></i>
+          <span>CTO Guidance + AI Development</span>
+        </div>
+        
+        <h2>Schedule Your Strategy Session</h2>
+        <p class="bottom-cta-text">Senior-level technical leadership combined with proven development processes. Get your project roadmap and start building with confidence.</p>
+        
+        <div class="cta-buttons">
+          <a class="cta-primary" href="mailto:hello@agentcto.ai?subject=Project%20inquiry%20from%20AgentCTO.ai">
+            <i class="ph ph-paper-plane-tilt"></i>
+            <span>Start a Conversation</span>
+          </a>
+        </div>
+        
       </div>
-      <div class="fine">© <span id="y"></span> AgentCTO</div>
     </section>
-  </main>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <img src="agentcto-logo.png" alt="AgentCTO" class="footer-logo-img" />
+              <span class="footer-brand-name">AgentCTO</span>
+            </div>
+            <p class="footer-tagline">AI Speed • Human oversight</p>
+          </div>
+          
+          <div class="footer-contact">
+            <h4 class="footer-section-title">Get Started</h4>
+            <div class="footer-contact-item">
+              <i class="ph ph-envelope"></i>
+              <a href="mailto:hello@agentcto.ai">hello@agentcto.ai</a>
+            </div>
+            <div class="footer-contact-item">
+              <i class="ph ph-chat-circle"></i>
+              <span>Strategic sessions & project inquiries</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <div class="footer-copyright">
+            <span>© <span id="y"></span> AgentCTO | All rights reserved.</span>
+          </div>
+          <div class="footer-ai-badge">
+            <i class="ph ph-robot"></i>
+            <span>Designed and Built by AI</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // tiny enhancement: update year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
